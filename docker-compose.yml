@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+
+  nginx-rtmp:
+    image: tiangolo/nginx-rtmp
+    restart: always
+    container_name: nginx-rtmp
+    ports:
+      - "1935:1935"
+      - "8088:80"
+    volumes:
+      - ./nginx_simple.conf:/etc/nginx/nginx.conf
+      - ./stat.xsl:/usr/local/nginx/html/stat.xsl
